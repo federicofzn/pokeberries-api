@@ -1,5 +1,6 @@
 import os
 
+from concurrent.futures import ThreadPoolExecutor
 from typing import List
 
 import requests
@@ -34,3 +35,18 @@ class PokeberryApiRepository(PokeberryRepository):
 
     def get_berries(self, berries_id) -> List[Pokeberry]:
         """Get the berries by ids from pokeapi."""
+        berries_data = []
+
+        with ThreadPoolExecutor() as executor:
+            # Submit the get_berry requests
+            berries_requests = [executor.submit(self.get_berry, id)
+                                for id in berries_id]
+
+            # Gather the get_berry results
+            for berry_request in berries_requests:
+                result = berry_request.result()
+
+                if result:
+                    berries_data.append(result)
+
+        return berries_data

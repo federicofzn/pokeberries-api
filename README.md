@@ -19,7 +19,7 @@ To run this API, follow these steps:
 3. Run the Flask application:
 
    ```sh
-   python src/app.py
+   python app.py
    ```
 
 4. Access the API at http://localhost:5000.

@@ -26,6 +26,11 @@ class PokeberryApiRepository(PokeberryRepository):
 
     def get_berry(self, berry_id) -> Pokeberry:
         """Get the berry by id from pokeapi."""
+        berry_url = self.base_url + f"/berry/{berry_id}"
+        response = self.fetch_data(berry_url)
+        berry_data = response.json()
+
+        return berry_data
 
     def get_berries(self, berries_id) -> List[Pokeberry]:
         """Get the berries by ids from pokeapi."""

@@ -18,6 +18,11 @@ class PokeberryApiRepository(PokeberryRepository):
 
     def get_berries_count(self) -> int:
         """Get the count of berries from pokeapi."""
+        berries_url = self.base_url + "/berry"
+        response = self.fetch_data(berries_url)
+        count = response.json()["count"]
+
+        return count
 
     def get_berry(self, berry_id) -> Pokeberry:
         """Get the berry by id from pokeapi."""

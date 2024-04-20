@@ -14,7 +14,6 @@ To run this API, follow these steps:
    pip install -r requirements.txt
    ```
 
-   > [!TIP]  
    > You can first create a virtual environment to install the dependencies.
 
 3. Run the Flask application:
@@ -27,7 +26,9 @@ To run this API, follow these steps:
 
 ## Endpoints
 
-GET "/": The index endpoint with a welcome message.
+- GET "/": The index endpoint with a welcome message.
+
+- GET "/allBerryStats": Returns raw info form all the berries.
 
 ## Technologies Used
 

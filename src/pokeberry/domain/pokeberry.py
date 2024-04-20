@@ -1,0 +1,2 @@
+class Pokeberry(object):
+    pass

@@ -1,6 +1,10 @@
 import json
 from dotenv import load_dotenv
 from flask import Flask, Response
+from flask_injector import FlaskInjector
+from injector import Injector
+
+from src.pokeberry.infrastructure.pokeberry_dependency_container import PokeberryDependencyContainer
 
 load_dotenv()
 
@@ -14,6 +18,12 @@ def index():
         response=json.dumps("Welcome to Pokeberries API"),
         status=200,
     )
+
+
+injector = Injector()
+injector.binder.install(PokeberryDependencyContainer(injector))
+
+FlaskInjector(app=app, injector=injector)
 
 
 if __name__ == "__main__":

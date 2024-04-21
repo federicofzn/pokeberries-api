@@ -1,6 +1,8 @@
+Faker==24.11.0
 Flask==3.0.3
 Flask-Injector==0.15.0
 Flask-RESTful==0.3.10
 injector==0.21.0
+pytest==8.1.1
 python-dotenv==1.0.1
 requests==2.31.0

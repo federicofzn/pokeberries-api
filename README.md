@@ -1,4 +1,4 @@
-# Pokeberries API
+# Pokeberries API <img src="https://images.wikidexcdn.net/mwuploads/wikidex/3/30/latest/20240130175744/Baya_Frambu_%28Dream_World%29_2.png" height="27px" style="margin-bottom: -3px">
 
 This is a Flask-based API for Pokeberries statistics.
 

@@ -1,5 +1,4 @@
 import json
-import pytest
 from dotenv import load_dotenv
 from flask import Flask, Response
 from flask_injector import FlaskInjector
@@ -30,10 +29,3 @@ injector.binder.install(PokeberryDependencyContainer(injector))
 api.add_resource(GetAllBerryStats, "/allBerryStats")
 
 FlaskInjector(app=app, injector=injector)
-
-
-if __name__ == "__main__":
-    exit_code = pytest.main(['-v', 'tests/test_get_all_berry_stats.py'])
-
-    if exit_code == 0:
-        app.run(debug=True)

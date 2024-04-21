@@ -31,7 +31,7 @@ class PokeberryApiRepository(PokeberryRepository):
         response = self.fetch_data(berry_url)
         berry_data = response.json()
 
-        return berry_data
+        return Pokeberry(berry_data["id"], berry_data["growth_time"], berry_data["name"])
 
     def get_berries(self, berries_id) -> List[Pokeberry]:
         """Get the berries by ids from pokeapi."""
@@ -44,9 +44,9 @@ class PokeberryApiRepository(PokeberryRepository):
 
             # Gather the get_berry results
             for berry_request in berries_requests:
-                result = berry_request.result()
+                pokeberry = berry_request.result()
 
-                if result:
-                    berries_data.append(result)
+                if pokeberry:
+                    berries_data.append(pokeberry)
 
         return berries_data

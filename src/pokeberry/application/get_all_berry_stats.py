@@ -1,4 +1,3 @@
-import json
 from flask import Response
 from flask_restful import Resource
 from injector import inject
@@ -18,10 +17,10 @@ class GetAllBerryStats(Resource):
 
         berries_ids = range(1, berries_count)
 
-        berries_data = self.pokeberry_repository.get_berries(berries_ids)
+        pokeberries = self.pokeberry_repository.get_berries(berries_ids)
 
         return Response(
             mimetype="application/json",
-            response=json.dumps(berries_data),
+            response=[pokeberry.to_json() for pokeberry in pokeberries],
             status=200,
         )

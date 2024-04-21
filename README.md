@@ -26,9 +26,47 @@ To run this API, follow these steps:
 
 ## Endpoints
 
-- GET "/": The index endpoint with a welcome message.
+  <details>
+  <summary><code>GET</code> <code><b>/</b></code> <code>(Returns a welcome message)</code></summary>
 
-- GET "/allBerryStats": Returns Pokeberry object class info from all the berries.
+##### Parameters
+
+> None
+
+##### Response
+
+> | http code | content-type       |
+> | --------- | ------------------ |
+> | `200`     | `application/json` |
+
+##### Example cURL
+
+> ```javascript
+>  curl -X GET -H "Content-Type: application/json" http://localhost:5000/
+> ```
+
+  </details>
+  </br>
+  <details>
+  <summary><code>GET</code> <code><b>/allBerryStats</b></code> <code>(Returns pokeberries statistics)</code></summary>
+
+##### Parameters
+
+> None
+
+##### Response
+
+> | http code | content-type       | response                                                                                                                                                                            |
+> | --------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+> | `200`     | `application/json` | `{"berries_names": [...], "min_growth_time": "", "median_growth_time": "", "max_growth_time": "", "variance_growth_time": "", "mean_growth_time": "", "frequency_growth_time": ""}` |
+
+##### Example cURL
+
+> ```javascript
+>  curl -X GET -H "Content-Type: application/json" http://localhost:5000/allBerryStats
+> ```
+
+  </details>
 
 ## Technologies Used
 

@@ -19,10 +19,44 @@ To run this API, follow these steps:
 3. Run the Flask application:
 
    ```sh
-   python app.py
+   flask run
    ```
 
 4. Access the API at http://localhost:5000.
+
+## Run with Docker
+
+To run this API with Docker, follow these steps:
+
+1. Install Docker (if you haven't already).
+
+2. Build the docker image:
+
+   ```sh
+   docker build -t test:latest .
+   ```
+
+3. Run the docker image:
+
+   ```sh
+   docker run test:latest
+   ```
+
+4. Access the API at http://localhost:8000.
+
+## Tests
+
+You can run the unit tests of the project with the command:
+
+```sh
+  pytest tests
+```
+
+You can also run the tests from the docker image:
+
+```sh
+docker run test:latest pytest tests
+```
 
 ## Endpoints
 
@@ -70,5 +104,7 @@ To run this API, follow these steps:
 
 ## Technologies Used
 
-- Flask
-- Python
+- Flask 3.0.3
+- Python 3.10
+- Docker 26.0.2
+- Pytest 8.1.1

@@ -28,7 +28,7 @@ To run this API, follow these steps:
 
 - GET "/": The index endpoint with a welcome message.
 
-- GET "/allBerryStats": Returns raw info form all the berries.
+- GET "/allBerryStats": Returns Pokeberry object class info from all the berries.
 
 ## Technologies Used
 

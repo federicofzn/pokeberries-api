@@ -29,7 +29,12 @@ def test_get_all_berry_stats():
         "max_growth_time": 8,
         "variance_growth_time": 5.4399999999999995,
         "mean_growth_time": 4.4,
-        "frequency_growth_time": 0,
+        "frequency_growth_time": {
+            "2": [pokeberries[0].name, pokeberries[3].name],
+            "4": [pokeberries[1].name],
+            "6": [pokeberries[2].name],
+            "8": [pokeberries[4].name],
+        },
     }
 
     assert all(

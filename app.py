@@ -1,6 +1,6 @@
 import json
 from dotenv import load_dotenv
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 from flask_injector import FlaskInjector
 from flask_restful import Api
 from injector import Injector
@@ -10,7 +10,7 @@ from src.pokeberry.infrastructure.pokeberry_dependency_container import Pokeberr
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask("pokeberri-app", template_folder="src")
 api = Api(app)
 
 
@@ -21,6 +21,11 @@ def index():
         response=json.dumps("Welcome to Pokeberries API"),
         status=200,
     )
+
+
+@app.route("/graph")
+def graph():
+    return render_template("pokeberry/application/graph_template.html")
 
 
 injector = Injector()

@@ -38,7 +38,6 @@ function createChart(statistics) {
     { name: "max_growth_time", color: "#EF5350" },
     { name: "variance_growth_time", color: "#F7AC2B" },
     { name: "mean_growth_time", color: "#56A3A6" },
-    { name: "frequency_growth_time", color: "#B4436C" },
   ];
 
   const datasets = statistics_fields.map((field, index) => (
@@ -73,13 +72,17 @@ function createChart(statistics) {
       },
       scales: {
         x: {
-          labels: ["Min", "Median", "Max", "Variance", "Mean", "Frequency"],
+          labels: ["Min", "Median", "Max", "Variance", "Mean"],
         },
         x1: {
           display: false,
           offset: true,
         },
         y: {
+          title: {
+            display: true,
+            text: "Growth Time (Hours)",
+          },
           beginAtZero: true,
           min: 0,
           grid: {

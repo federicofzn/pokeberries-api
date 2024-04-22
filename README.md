@@ -28,7 +28,7 @@ To run this API, follow these steps:
 
 To run this API with Docker, follow these steps:
 
-1. Install Docker (if you haven't already).
+1. Install [Docker](https://docs.docker.com/engine/install/) (if you haven't already).
 
 2. Build the docker image:
 
@@ -42,7 +42,9 @@ To run this API with Docker, follow these steps:
    docker run test:latest
    ```
 
-4. Access the API at http://localhost:8000.
+4. A Docker container is isolated from your host machine, meaning it operates with its own IP address, typically starting with 172. You can find it in your terminal after you start running the Docker container.
+
+   Access the API at http://172.X.X.X:8000.
 
 ## Tests
 
@@ -80,7 +82,7 @@ docker run test:latest pytest tests
 > ```
 
   </details>
-  </br>
+  
   <details>
   <summary><code>GET</code> <code><b>/allBerryStats</b></code> <code>(Returns pokeberries statistics)</code></summary>
 
@@ -101,6 +103,16 @@ docker run test:latest pytest tests
 > ```
 
   </details>
+
+</br>
+
+> The same endpoints could be used with the Docker IP.
+
+## Graph
+
+You can access to a chart representation of the data obtained from the endpoint /allBerryStats by visiting http://localhost:5000/graph in a web browser.
+
+> The same view can be accessed with the Docker IP.
 
 ## Technologies Used
 

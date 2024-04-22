@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  background: #fbfbfb;
+  font-family: sans-serif;
+  color: #263238;
+}
+
+.top-banner {
+  height: 42px;
+  background: #ef5350;
+  padding: 4px 30px;
+}
+
+.content-container {
+  max-width: 72rem;
+  margin: 0 20%;
+  padding: 30px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #4093e9;
+}
+
+.chart-container {
+  width: 90%;
+  margin: auto;
+}
+
+h3 span {
+  color: #ababab;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.berries-list {
+  margin: 0 0 1em;
+  column-count: 8;
+  column-gap: 10px;
+  color: #4d4d4d;
+  font-family: monospace;
+  list-style-type: none;
+  padding: 0;
+}
+
+.endpoint-container {
+  font-family: monospace;
+}
+
+.endpoint-get-tag {
+  background-color: #4093e9;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.json-container {
+  padding: 20px;
+  background-color: #f6f8fa;
+  border: 1px solid #f2f5f8;
+  border-radius: 8px;
+  max-height: 18em;
+  overflow-y: auto;
+}

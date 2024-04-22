@@ -1,4 +1,5 @@
-from typing import List
+from collections import defaultdict
+from typing import Dict, List
 
 from src.pokeberry.domain.pokeberry import Pokeberry
 
@@ -48,6 +49,12 @@ class PokeberriesStatistics():
         """Returns the mean growth_time from the list."""
         return sum(self.growth_times) / self.pokeberries_len
 
-    def get_frequency(self) -> int:
-        """Returns a json representation of the object."""
-        return 0
+    def get_frequency(self) -> Dict:
+        """Returns a dict with growth_time as key and berry names as value."""
+        frequencies_dict = defaultdict(list)
+
+        for pokeberry in self.pokeberries:
+            frequencies_dict[pokeberry.growth_time].append(
+                pokeberry.name)
+
+        return dict(frequencies_dict)

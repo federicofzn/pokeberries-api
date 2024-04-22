@@ -63,27 +63,6 @@ docker run test:latest pytest tests
 ## Endpoints
 
   <details>
-  <summary><code>GET</code> <code><b>/</b></code> <code>(Returns a welcome message)</code></summary>
-
-##### Parameters
-
-> None
-
-##### Response
-
-> | http code | content-type       |
-> | --------- | ------------------ |
-> | `200`     | `application/json` |
-
-##### Example cURL
-
-> ```javascript
->  curl -X GET -H "Content-Type: application/json" http://localhost:5000/
-> ```
-
-  </details>
-  
-  <details>
   <summary><code>GET</code> <code><b>/allBerryStats</b></code> <code>(Returns pokeberries statistics)</code></summary>
 
 ##### Parameters
@@ -110,7 +89,7 @@ docker run test:latest pytest tests
 
 ## Graph
 
-You can access to a chart representation of the data obtained from the endpoint /allBerryStats by visiting http://localhost:5000/graph in a web browser.
+You can access to a chart representation of the data obtained from the endpoint /allBerryStats by visiting http://localhost:5000/ in a web browser.
 
 > The same view can be accessed with the Docker IP.
 
